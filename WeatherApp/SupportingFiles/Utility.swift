@@ -10,6 +10,12 @@ import Foundation
 
 class Utility {
     
+    struct DateKeys {
+        static let day = "day"
+        static let monthName = "monthname_short"
+        static let year = "year"
+        static let weekday = "weekday"
+    }
     class func getImage(url: String) -> Data? {
         let urlStr:URL = URL(string: url)!
         let data: Data?
@@ -32,5 +38,19 @@ class Utility {
         dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .short
         return dateFormatter.string(from: date)
+    }
+    
+    class func getDateFromJson(dateInfo: [String: Any]) -> String{
+        var dateStr = String()
+        if let weekday = dateInfo[DateKeys.weekday] {
+            dateStr.append("\(weekday) ")
+        }
+        if let month = dateInfo[DateKeys.monthName] {
+            dateStr.append("\(month) ")
+        }
+        if let date = dateInfo[DateKeys.day] {
+            dateStr.append("\(date) ")
+        }
+        return dateStr
     }
 }

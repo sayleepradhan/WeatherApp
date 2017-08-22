@@ -21,13 +21,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var visibilityLabel: UILabel!
     @IBOutlet weak var precipitationLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
-    
-    var refreshControl: UIRefreshControl!
+    var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     
     let forecastService = ForecastService(APIKey: "bf446a4d96bb2f95")
     
     override func viewWillAppear(_ animated: Bool) {
        self.dayTimeLabel.text = Utility.getDayTime()
+       pause()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,12 +63,13 @@ class ViewController: UIViewController {
             if let city = placeMark.addressDictionary!["City"] as? NSString, let state = placeMark.addressDictionary!["State"] as? NSString {
                 let cityName = city.replacingOccurrences(of: " ", with: "_")
                 
-                self.forecastService.getForecast(state: state as String, city: cityName as String) { (currentWeather) in
+                self.forecastService.getCurrentWeather(state: state as String, city: cityName as String) { (currentWeather) in
                     // OFF THE MAIN QUEUE!!!!
                     if let currentWeather = currentWeather {
                         // RULE: ALL UI CODE MUST HAPPEN ON THE MAIN QUEUE
                         // TODO: get back to the main queue
                         DispatchQueue.main.async {
+                            self.restore()
                             if let tempInF = Utility.getTempInF(temp: currentWeather.temperature!){
                                 
                                 self.temperatureLabel.text = "\(tempInF)"
@@ -123,12 +124,27 @@ class ViewController: UIViewController {
                             self.cityLabel.text = city as String
                         }
                         
+                        
                     }
                 }
             }
             
         })
         
+    }
+    
+    func pause() {
+        activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+    }
+    func restore() {
+        activityIndicator.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
     }
     
 }

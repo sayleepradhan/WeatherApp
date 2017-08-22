@@ -22,7 +22,7 @@ class ForecastService
         
     }
     
-    func getForecast(state: String, city: String, completion: @escaping (CurrentWeather?) -> Void)
+    func getCurrentWeather(state: String, city: String, completion: @escaping (CurrentWeather?) -> Void)
     {
         if let forecastURL = URL(string: "\(forecastBaseURL!)/conditions/q/\(state)/\(city).json") {
             
@@ -39,5 +39,31 @@ class ForecastService
             })
             
         }
+    }
+    
+    func getTenDayForecast(state: String, city: String, completion: @escaping([ForecastDay]?) -> Void){
+        if let forecastURL = URL(string: "\(forecastBaseURL!)/forecast10day/q/\(state)/\(city).json") {
+            let networkProcessor = NetworkProcessor(url: forecastURL)
+            networkProcessor.downloadJSONFromURL({ (jsonDictionary) in
+                
+                var forecastInfo = [ForecastDay]()
+                if let forecastDictionary = jsonDictionary?["forecast"] as? [String : Any] {
+                    if let simpleForecast = forecastDictionary["simpleforecast"] as? [String : Any] {
+                        if let forecastPeriodWise = simpleForecast["forecastday"] as? [Any] {
+                            for period in forecastPeriodWise {
+                                if let currentPeriod = period as? [String: Any] {
+                                    let forecastItem = ForecastDay(weatherDictionary: currentPeriod, cityName: city)
+                                    forecastInfo.append(forecastItem)
+                                }
+                            }
+                        }
+                    }
+                    completion(forecastInfo)
+                } else {
+                    completion(nil)
+                }
+            })
+        }
+    
     }
 }
