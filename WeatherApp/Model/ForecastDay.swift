@@ -59,7 +59,7 @@ class ForecastDay {
         if let humidityValue = weatherDictionary[WeatherKeys.humidity] as? Int {
             humidity = String(format: "\(humidityValue)%%")
         } else {
-            humidity = "-"
+            humidity = nil
         }
         iconURL = weatherDictionary[WeatherKeys.iconURL] as? String ?? nil
         city = cityName
@@ -75,7 +75,7 @@ class ForecastDay {
         if let prec = weatherDictionary[WeatherKeys.precipitation] as? [String: Any], let prec_in = prec[WeatherKeys.precipitation_in] as? Int {
             precipitation = String(format: "\(prec_in) in")
         } else {
-            precipitation = "-"
+            precipitation = nil
         }
     }
 }

@@ -40,8 +40,12 @@ class ForecastTableViewCell: UITableViewCell {
         weatherConditionLabel.text = data.conditions ?? "-"
         dayLabel.text = data.date ?? "-"
         windLabel.text = data.wind ?? "-"
-        humidityLabel.text = data.humidity ?? "-"
-        precipitationLabel.text = data.precipitation ?? "-"
+        humidityLabel.text = data.humidity != nil
+            ? String(format: "Humidity: \(String(describing: data.humidity!))%%")
+            : "Humidity: -"
+        precipitationLabel.text = data.precipitation != nil
+            ? String(format: "Precipitation: \(String(describing: data.precipitation!))")
+            : "Precipitation: -"
         
     }
 
