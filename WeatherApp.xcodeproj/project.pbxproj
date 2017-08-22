@@ -10,6 +10,9 @@
 		580C28931F4AB4B9003ABD38 /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C28921F4AB4B9003ABD38 /* ForecastViewController.swift */; };
 		580C28951F4B7A83003ABD38 /* ForecastDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C28941F4B7A83003ABD38 /* ForecastDay.swift */; };
 		580C28981F4B989A003ABD38 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C28971F4B989A003ABD38 /* ForecastTableViewCell.swift */; };
+		580C289A1F4BB73A003ABD38 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C28991F4BB73A003ABD38 /* BaseViewController.swift */; };
+		580C289C1F4BB7AC003ABD38 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C289B1F4BB7AC003ABD38 /* NavigationController.swift */; };
+		584367031F4BDD7A003B2FB0 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584367021F4BDD7A003B2FB0 /* SideMenuViewController.swift */; };
 		58F0F6CD1F481DC500E9BF3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F0F6CC1F481DC500E9BF3F /* AppDelegate.swift */; };
 		58F0F6CF1F481DC500E9BF3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F0F6CE1F481DC500E9BF3F /* ViewController.swift */; };
 		58F0F6D21F481DC500E9BF3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58F0F6D01F481DC500E9BF3F /* Main.storyboard */; };
@@ -21,7 +24,6 @@
 		58F0F6FE1F48204C00E9BF3F /* NetworkProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F0F6FD1F48204C00E9BF3F /* NetworkProcessor.swift */; };
 		58F0F7001F48DB7600E9BF3F /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F0F6FF1F48DB7600E9BF3F /* CurrentWeather.swift */; };
 		58F0F7031F495BFD00E9BF3F /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F0F7021F495BFD00E9BF3F /* Utility.swift */; };
-		58F0F7081F4AA94100E9BF3F /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F0F7071F4AA94100E9BF3F /* MenuTableViewController.swift */; };
 		BB83AF60605975FDC4EDD4BD /* libPods-WeatherApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD54B956A8F5064EA228A18 /* libPods-WeatherApp.a */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,9 @@
 		580C28921F4AB4B9003ABD38 /* ForecastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
 		580C28941F4B7A83003ABD38 /* ForecastDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDay.swift; sourceTree = "<group>"; };
 		580C28971F4B989A003ABD38 /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
+		580C28991F4BB73A003ABD38 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		580C289B1F4BB7AC003ABD38 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		584367021F4BDD7A003B2FB0 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		58F0F6C91F481DC500E9BF3F /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58F0F6CC1F481DC500E9BF3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58F0F6CE1F481DC500E9BF3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +69,6 @@
 		58F0F6FD1F48204C00E9BF3F /* NetworkProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProcessor.swift; sourceTree = "<group>"; };
 		58F0F6FF1F48DB7600E9BF3F /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		58F0F7021F495BFD00E9BF3F /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
-		58F0F7071F4AA94100E9BF3F /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		60B852ACFA414D63BCC72EE0 /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 		EBD54B956A8F5064EA228A18 /* libPods-WeatherApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeatherApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -199,8 +203,10 @@
 			isa = PBXGroup;
 			children = (
 				58F0F6CE1F481DC500E9BF3F /* ViewController.swift */,
-				58F0F7071F4AA94100E9BF3F /* MenuTableViewController.swift */,
 				580C28921F4AB4B9003ABD38 /* ForecastViewController.swift */,
+				580C28991F4BB73A003ABD38 /* BaseViewController.swift */,
+				580C289B1F4BB7AC003ABD38 /* NavigationController.swift */,
+				584367021F4BDD7A003B2FB0 /* SideMenuViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -400,8 +406,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				58F0F6CF1F481DC500E9BF3F /* ViewController.swift in Sources */,
-				58F0F7081F4AA94100E9BF3F /* MenuTableViewController.swift in Sources */,
+				580C289C1F4BB7AC003ABD38 /* NavigationController.swift in Sources */,
+				580C289A1F4BB73A003ABD38 /* BaseViewController.swift in Sources */,
 				58F0F7001F48DB7600E9BF3F /* CurrentWeather.swift in Sources */,
+				584367031F4BDD7A003B2FB0 /* SideMenuViewController.swift in Sources */,
 				58F0F7031F495BFD00E9BF3F /* Utility.swift in Sources */,
 				580C28951F4B7A83003ABD38 /* ForecastDay.swift in Sources */,
 				58F0F6FC1F481EFA00E9BF3F /* ForecastService.swift in Sources */,

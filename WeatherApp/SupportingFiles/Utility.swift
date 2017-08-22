@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Utility {
     
@@ -43,7 +44,7 @@ class Utility {
     class func getDateFromJson(dateInfo: [String: Any]) -> String{
         var dateStr = String()
         if let weekday = dateInfo[DateKeys.weekday] {
-            dateStr.append("\(weekday) ")
+            dateStr.append("\(weekday), ")
         }
         if let month = dateInfo[DateKeys.monthName] {
             dateStr.append("\(month) ")
@@ -52,5 +53,9 @@ class Utility {
             dateStr.append("\(date) ")
         }
         return dateStr
+    }
+    
+    class func getNavBarBGColor() -> UIColor {
+        return UIColor(red: 25.0/255.0, green: 25.0/255.0, blue: 25.0/255.0, alpha: 1.0)
     }
 }

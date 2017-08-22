@@ -65,7 +65,7 @@ class ForecastDay {
         city = cityName
         if let windInfo = weatherDictionary[WeatherKeys.wind] as? [String: Any] {
             if let direction = windInfo[WeatherKeys.wind_dir] as? String, let mph = windInfo[WeatherKeys.wind_mph] as? Int {
-                    wind = String(format: "From the \(direction) at \(mph) MPH")
+                    wind = String(format: "Wind: From the \(direction) at \(mph) MPH")
             } else {
                 wind = "-"
             }

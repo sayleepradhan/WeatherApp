@@ -9,15 +9,15 @@
 import UIKit
 import CoreLocation
 
-class ForecastViewController: UIViewController {
+class ForecastViewController: BaseViewController {
 
     @IBOutlet weak var forecastTableView: UITableView!
     @IBOutlet weak var cityLabel: UILabel!
     let forecastService = ForecastService(APIKey: "bf446a4d96bb2f95")
     var foreCastData = [ForecastDay]()
-    var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     
     override func viewWillAppear(_ animated: Bool) {
+            self.getWeatherUpdate()
             pause()
     }
     override func viewDidLoad() {
@@ -28,7 +28,7 @@ class ForecastViewController: UIViewController {
                 forecastService.locationManager?.requestWhenInUseAuthorization()
             }
             forecastService.locationManager?.startUpdatingLocation()
-            self.getWeatherUpdate()
+            
         }
     }
 
@@ -81,20 +81,11 @@ class ForecastViewController: UIViewController {
         
     }
     
-    func pause() {
-        activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-        activityIndicator.center = self.view.center
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-        view.addSubview(activityIndicator)
-        activityIndicator.startAnimating()
-        UIApplication.shared.beginIgnoringInteractionEvents()
+    override func restore() {
+         super.restore()
+         self.forecastTableView.reloadData()
     }
-    func restore() {
-        self.forecastTableView.reloadData()
-        activityIndicator.stopAnimating()
-        UIApplication.shared.endIgnoringInteractionEvents()
-    }
+    
 }
 extension ForecastViewController: UITableViewDelegate, UITableViewDataSource {
     
